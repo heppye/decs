@@ -1,0 +1,37 @@
+# This is the decay file for the Xib*-> Xib- pi+
+#(created by candan dozen and Gul Gokbulut)
+#
+#
+Alias      MyXi_b0       Xi_b*0
+Alias      Myanti-Xi_b0  anti-Xi_b*0
+ChargeConj MyXi_b0       Myanti-Xi_b0
+
+
+Alias      MyXi_b-     Xi_b-
+Alias      Myanti-Xi_b+     anti-Xi_b+
+ChargeConj MyXi_b-     Myanti-Xi_b+
+Alias      MyJ/psi  J/psi
+ChargeConj MyJ/psi  MyJ/psi
+
+Decay MyXi_b0
+
+    1.000     Xi_b0     gamma       PHSP;
+
+#    1.000       MyXi_b-      pi+        PHSP;
+Enddecay
+
+
+#Created by I. Heredia
+##to decay Xi_b- -> Xi- J/psi (mu+ mu-) and charge conjugate.
+##Xi- is decayed by Geant.
+##
+#
+Decay Xi_b-
+  1.000    Xi-     MyJ/psi   PHSP;
+  Enddecay
+CDecay Myanti-Xi_b+
+  #
+Decay MyJ/psi
+    1.000         mu+       mu-            PHOTOS VLL;
+Enddecay
+End
